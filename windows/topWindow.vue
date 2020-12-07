@@ -33,9 +33,12 @@
 						<uni-badge class="debug-badge" :text="logs.length" type="error"></uni-badge>
 					</view>
 					<!-- #endif -->
-					<view v-for="link in links" :key="link.url" class="menu-item">
-						<uni-link :href="link.url" :text="link.text" />
-					</view>
+                    <!-- <template v-if="links.length>0">
+                        <view v-for="link in links" :key="link.url" class="menu-item">
+                        	<uni-link :href="link.url" :text="link.text" />
+                        </view>
+                    </template> -->
+					
 					<template v-if="userInfo.username">
 						<view class="menu-item username">
 							<text>{{userInfo.username}}</text>️

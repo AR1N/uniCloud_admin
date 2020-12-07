@@ -22,6 +22,7 @@
 		},
 		onLaunch: function() {
 			console.log('App Launch')
+            // console.log(process.env)
 			if (!this.isTokenValid) {
 				uni.navigateTo({
 					url: config.login.url
