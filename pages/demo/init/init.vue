@@ -7,16 +7,16 @@
         </view>
         <view class="uni-container">
             <uni-forms ref="form" validateTrigger="bind" :rules="rules" @submit="submit">
-                <uni-forms-item left-icon="person" name="username" labelWidth="35">
+                <uni-forms-item class="radius-5" left-icon="person" name="username" labelWidth="35">
                     <input ref="usernameInput" class="uni-input-border" type="text" placeholder="账户" @blur="binddata('username',$event.detail.value)" />
                 </uni-forms-item>
 
-                <uni-forms-item left-icon="locked" name="password" labelWidth="35">
+                <uni-forms-item class="radius-5" left-icon="locked" name="password" labelWidth="35">
                     <input class="uni-input-border" :password="showPassword" placeholder="密码" @blur="binddata('password',$event.detail.value)" />
 					<text class="uni-icon-password-eye pointer" :class="[!showPassword ? 'uni-eye-active' : '']" @click="changePassword">&#xe568;</text>
 				</uni-forms-item>
 
-                <uni-forms-item left-icon="locked" name="passwordConfirmation" labelWidth="35" :errorMessage="errorMessage">
+                <uni-forms-item class="radius-5" left-icon="locked" name="passwordConfirmation" labelWidth="35" :errorMessage="errorMessage">
                     <input ref="passwordInput" @confirm="confirmForm('passwordConfirmation',$event.detail.value)" @blur="binddata('passwordConfirmation',$event.detail.value)"
                         class="uni-input-border" :password="showPasswordAgain" placeholder="确认密码" />
 					<text class="uni-icon-password-eye pointer" :class="[!showPasswordAgain ? 'uni-eye-active' : '']" @click="changePasswordAgain">&#xe568;</text>
@@ -169,19 +169,22 @@
     }
 </script>
 
-<style>
+<style scoped>
     page {
         width: 100%;
         height: 100%;
         display: flex;
+         background-color: rgba(0, 0, 0, 0.5);
         /* align-items: center; */
         justify-content: center;
-        background-color: #fff;
 		/* #ifndef H5 */
 		padding-top: 85px;
 		/* #endif */
     }
-
+    .uni-title{
+        color: #fff;
+        font-weight: bold;
+    }
     .login-box {
         position: relative;
         max-width: 420px;

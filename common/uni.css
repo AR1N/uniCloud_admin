@@ -277,3 +277,8 @@ html {
 	min-height: 30px;
 	line-height: 30px;
 }
+
+.radius-5{
+    border-radius: 5px;
+    overflow: hidden;
+}
